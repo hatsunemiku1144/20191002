@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<head>
+        <script>
+                //getElementById(抓取頁面上的元素)
+                function getElement(name) {
+                  return document.getElementById(name);
+                }
+            
+                //判斷是否可以送件
+                function Button_Submit() {
+                  //抓取頁面上的checkboc1，取得是否checked
+                  var isChecked = getElement('MustCheck').checked;
+                  //如果是，就return true
+                  if (isChecked) return true;
+                  //否則就... 
+                  alert('必須勾選同意!');
+                  return false;
+                }
+            
+                //當網頁載入完成後執行
+                window.onload = function () {
+                  //hook event(在form1被submit時...)
+                  getElement('form1').onsubmit = function () {
+                  //呼叫 Button_Submit()
+                    return Button_Submit();
+                  };
+                };
+              </script>
+</head>
+
+<body>
+    <form id="form1" action="http://isbaas.azurewebsites.net/WebForms/Form2Mail.aspx?mailto=hatsunemiku1144@gmail.com&redirect=http://www.google.com" method="POST" >
+        <fieldset style="border-radius:25px">
+            <legend>個人資料--<strong>必填</strong></legend>
+            <label>姓名:</label> <input type="text" id="FieldName"  name=" FieldName" placeholder="請輸入姓名"></br>
+            <label>密碼:</label> <input type="password" id="Fieldpwd"  name=" Fieldpwd"></br>
+            <label>性別</label><input type="radio" id="Gender" name="Gender" value="0">男性
+            <input type="radio" id="Gender" name="Gender" value="1"">女性
+        </fieldset>
+   
+            <fieldset style="border-radius:25px">
+                <legend>個人資料--興趣</legend>
+                <label>興趣:</label> 
+                <input type="checkbox" id="Hobby" name="Hobby" value="Movie">電影
+                <input type="checkbox" id="Hobby" name="Hobby" value="jogging">跑步
+                <input type="checkbox" id="Hobby" name="Hobby" value="NetSurf">上網
+                <input type="checkbox" id="Hobby" name="Hobby" value="Sleep">睡覺
+           
+            </br>
+            <label>專長</label><textarea id="fieldMultiLineText" cols="40" rows="5"></textarea>
+
+        </fieldset>
+   
+        <fieldset style="border-radius:25px">
+            <legend>個人資料--地址</legend>
+            <label>郵遞區號:</label> <input type=" text" id="FieldAddress" value="" name=" FieldAddress"></br>
+            <div>
+                <select name="FieldCity">
+                    <label>縣市</label>
+                    <option value="Taipei"select>台北</option>
+                    <option value="Taiching">台中</option>
+                    <option value="Tainan">台南</option>
+                    <option value="Kaoshung">高雄</option>
+                </select>
+            </div>
+            <label>
+                其他地址
+            </label> <input type="text" id="FieldAddress" value="" name=" FieldAddress" placeholder="請輸入地址">
+        </fieldset>
+        <button type="submit">提交</button><button type="reset">重新填寫</button>
+    </form>
+    <input type="checkbox" id="MustCheck" name="MustCheck">同意才可以發大財
+   
+</body>
