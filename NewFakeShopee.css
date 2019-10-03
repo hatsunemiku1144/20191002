@@ -1,0 +1,134 @@
+body {
+  padding: auto;
+  margin: auto;
+}
+
+i {
+  color: #e9e5e5;
+}
+
+div.Upper {
+  background-color: #e92c25;
+}
+
+div.Upper button {
+  background: #e92c25;
+  border: none;
+  color: white;
+}
+
+div.Lower {
+  background-color: #fe4500;
+  height: 120px;
+}
+
+div.Center {
+  background-color: #e9e5e5;
+  height: 900px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  margin: 0,auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+div.CenterTop {
+  background-color: #f3f3f3;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: 1;
+          flex-flow: 1;
+  height: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0,auto;
+}
+
+div.CenterTop .Left {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 3px;
+}
+
+div.CenterTop .Right {
+  -webkit-box-flex: 3;
+      -ms-flex-positive: 3;
+          flex-grow: 3;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 3px;
+}
+
+div.CenterTop .Right .up {
+  text-align: center;
+}
+
+div.CenterTop .Right .down {
+  text-align: center;
+  padding-top: 10px;
+}
+
+div.CenterBottom {
+  background-color: #f3f3f3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-flow: 1;
+      flex-flow: 1;
+}
+
+div.circle {
+  margin-left: 20px;
+  float: left;
+  margin-right: 30px;
+}
+
+.Text {
+  text-align: center;
+}
+
+div.bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #f3f3f3;
+  margin-top: 10px;
+  height: 200px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+div.bottom .item {
+  padding-top: 20px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+}
+
+.w3-light-green {
+  background-color: lightgreen;
+  width: 150px;
+  margin: 0 auto;
+}
+/*# sourceMappingURL=NewFakeShopee.css.map */
