@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<head>
+  <script>
+    //getElementById(抓取頁面上的元素)
+    function getElement(name) {
+      return document.getElementById(name);
+    }
+
+    //判斷是否可以送件
+    function Button_Submit() {
+      //抓取頁面上的checkboc1，取得是否checked
+      var isChecked = getElement('MustCheck').checked;
+      //如果是，就return true
+      if (isChecked) return true;
+      //否則就... 
+      alert('必須勾選同意!');
+      return false;
+    }
+
+    //當網頁載入完成後執行
+    window.onload = function () {
+      //hook event(在form1被submit時...)
+      getElement('form1').onsubmit = function () {
+        //呼叫 Button_Submit()
+        return Button_Submit();
+      };
+    };
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header bg-primary text-white">個人資料</div>
+          <div class="card-body">
+            <label>姓名:</label> <input class="form-control" type="text" id="FieldName" name=" FieldName"
+              placeholder="請輸入姓名"></br>
+            <label>密碼:</label> <input class="form-control" type="password" id="Fieldpwd" name=" Fieldpwd"></br>
+            <label>性別</label><input type="radio" id="Gender" name="Gender" value="0">男性
+            <input type="radio" id="Gender" name="Gender" value="1"">女性
+                                          </div>
+                         </div>
+                  </div>
+                 <div class=" col-md-6">
+            <div class="card">
+              <div class="card-header bg-primary text-white">個人資料--興趣</div>
+              <div class="card-body">
+                <label>興趣:</label>
+                <input type="checkbox" id="Hobby" name="Hobby" value="Movie">電影
+                <input type="checkbox" id="Hobby" name="Hobby" value="jogging">跑步
+                <input type="checkbox" id="Hobby" name="Hobby" value="NetSurf">上網
+                <input type="checkbox" id="Hobby" name="Hobby" value="Sleep">睡覺
+              </div>
+              </br>
+              <label>專長</label><textarea id="fieldMultiLineText" cols="40" rows="5"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+        <div class="col-md-6" style="margin-top: 10px">
+          <div class="card">
+            <div class="card-header bg-primary text-white">個人資料--地址</div>
+            <div class="card-body">
+              <label>郵遞區號:</label> <input type=" text" id="FieldAddress" value="" name=" FieldAddress"></br>
+              <div>
+                <select name="FieldCity">
+                  <label>縣市</label>
+                  <option value="Taipei" select>台北</option>
+                  <option value="Taiching">台中</option>
+                  <option value="Tainan">台南</option>
+                  <option value="Kaoshung">高雄</option>
+                </select>
+              </div>
+            </div>
+            <label>其他地址</label>
+            <input type="text" id="FieldAddress" value="" name=" FieldAddress" placeholder="請輸入地址">
+          </div>
+          <div style="margin-top: 10px;">
+            <button class="btn btn-danger" type="submit">提交</button><button class="btn btn-danger"
+              type="reset">重新填寫</button>
+          </div>
+        </div>
+        </div>
+      </div>
+
+    </div>
+    </form>
+
+
+</body>

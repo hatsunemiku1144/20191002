@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<head>
+    <script>
+
+        function calculate() {
+            var height = Number(document.getElementById("height").value) / 100;
+            var weight = Number(document.getElementById("weight").value);
+            var result = (weight) / (height * height);
+            document.getElementById("result").innerHTML ="BMI為:" + result;
+            if (result == "NaN") {
+                alert("請輸入數字");
+            }
+        }
+    </script>
+   <link rel="stylesheet"
+   href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
+   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</head>
+<html>
+
+<body>
+        
+<div class="container">
+        <form>
+        <div class="form-group">
+       
+            <div class="col-md-3">身高:</br><input type="text" id="height" name="height"></div>
+            <div class="col-md-3">體重:</br><input type="text" id="weight" name="weight"></div>
+        </div>
+        
+        <p id="result">BMI為:</p>
+    
+        <input class="btn btn-danger" type="button" id="btn1" onclick="calculate()" value="calculate">       
+   
+   </form>
+    </div>
+
+
+</body>
+
+</html>
